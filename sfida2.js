@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <h1>Indice</h1>
-<ul>
-    <li><a href="#animal-group-names">Animal Group Names</a></li>
-    <li><a href="#classy-gallery">A Classy Gallery</a></li>
-    <li><a href="#clouds">What are Clouds?</a></li>
-</ul>
-
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Fun Facts and Information</title>
@@ -17,7 +9,7 @@
             font-family: sans-serif;
             margin: 20px;
         }
-        
+
         h1, h2 {
             font-family: fantasy;
             border-bottom: 1px solid rgb(230, 230, 230);
@@ -27,11 +19,11 @@
         h1:hover, h2:hover {
             background-color: rgb(248, 255, 199);
         }
-        
+
         p {
             font-family: sans-serif;
         }
-        
+
         /* Animal Group Names */
         .animal-images img {
             max-width: 150px;
@@ -97,6 +89,18 @@
         }
 
         .gold-frame {
+            border: 10px ridge rgb(255, 183, 0);
+            margin: 7px;
+        }
+
+        .silver-frame {
+            border: 10px groove rgb(204, 204, 204);
+        }
+
+        /* Clouds */
+        #cloud-pic {
+            width: 100px;
+            float: left;
             margin: 7px;
         }
 
@@ -125,33 +129,43 @@
     <h2>A skulk of foxes</h2>
     <p>Also called a "leash."</p>
     <div class="animal-images">
-        <img src="https://www.kasandbox.org/programming-images/animals/fox.png">
-        <img src="https://www.kasandbox.org/programming-images/animals/fox.png">
+        <img src="https://www.kasandbox.org/programming-images/animals/fox.png" alt="Fox">
+        <img src="https://www.kasandbox.org/programming-images/animals/fox.png" alt="Fox">
     </div>
 
     <h2>A clowder of cats</h2>
     <p>Also called a "pounce", "glaring", "kindle", or "clutter."</p>
     <div class="animal-images">
-        <img src="https://www.kasandbox.org/programming-images/animals/cat.png">
-        <img src="https://www.kasandbox.org/programming-images/animals/cat.png">
+        <img src="https://www.kasandbox.org/programming-images/animals/cat.png" alt="Cat">
+        <img src="https://www.kasandbox.org/programming-images/animals/cat.png" alt="Cat">
     </div>
     <p><a href="http://en.wikipedia.org/wiki/List_of_animal_names">Learn more on Wikipedia</a></p>
 
+    <button onclick="toggleAnimals()">Mostra/Nascondi Animali</button>
+
     <h1>A Classy Gallery</h1>
-    <img src="https://www.kasandbox.org/programming-images/animals/cat.png" class="image-small black-frame">
-    <img src="https://www.kasandbox.org/programming-images/animals/fox.png" class="image-medium gold-frame">
-    <img src="https://www.kasandbox.org/programming-images/animals/penguins.png" class="image-small silver-frame">
+    <img src="https://www.kasandbox.org/programming-images/animals/cat.png" class="image-small black-frame" alt="Cat">
+    <img src="https://www.kasandbox.org/programming-images/animals/fox.png" class="image-medium gold-frame" alt="Fox">
+    <img src="https://www.kasandbox.org/programming-images/animals/penguins.png" class="image-small silver-frame" alt="Penguins">
 
     <h1>What are Clouds?</h1>
-    <img id="cloud-pic" src="https://www.kasandbox.org/programming-images/landscapes/clouds-from-plane.png">
+    <img id="cloud-pic" src="https://www.kasandbox.org/programming-images/landscapes/clouds-from-plane.png" alt="Clouds from plane">
     <div id="cloud-sidebar">
         <h5>Why are some clouds yellow?</h5>
         <p>Yellowish clouds may occur in the late spring through early fall months during forest fire season. The yellow color is due to the presence of pollutants in the smoke. Yellowish clouds caused by the presence of nitrogen dioxide are sometimes seen in urban areas with high air pollution levels.</p>
     </div>
     <p>In meteorology, a cloud is a visible mass of liquid droplets or frozen crystals made of water or various chemicals suspended in the atmosphere above the surface of a planetary body. These suspended particles are also known as aerosols and are studied in the cloud physics branch of meteorology.</p>
     <p>Terrestrial cloud formation is the result of air in Earth's atmosphere becoming saturated due to either or both of two processes: cooling of the air and adding water vapor. With sufficient saturation, precipitation will fall to the surface.</p>
-    <button onclick="toggleAnimals()">Mostra/Nascondi Animali</button>
-
     <p><a href="http://en.wikipedia.org/wiki/Cloud">Read more on Wikipedia</a></p>
+
+    <script>
+        function toggleAnimals() {
+            const images = document.querySelectorAll('.animal-images');
+            images.forEach((div) => {
+                div.style.display = (div.style.display === 'none') ? 'block' : 'none';
+            });
+        }
+    </script>
+
 </body>
-</html>        
+</html>
